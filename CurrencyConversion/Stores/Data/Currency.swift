@@ -9,7 +9,7 @@ import Foundation
 
 typealias CurrencyCode = String
 
-struct Currency {
+struct Currency: Equatable {
     let code: CurrencyCode
     let name: String
 }

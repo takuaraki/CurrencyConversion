@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ConversionRate {
+struct ConversionRate: Equatable {
     let before: CurrencyCode
     let after: CurrencyCode
     let rate: Float

@@ -30,7 +30,7 @@ class CurrencyRepository: CurrencyRepositoryProtocol {
             let dto = api.getSupportedCurrencies()
             let currencies = dto.currencies.map { code, name -> Currency in
                 return Currency(code: code, name: name)
-            }
+            }.sorted(by: { $0.code < $1.code })
 
             db.saveSupportedCurrencies(currencies: currencies)
 
@@ -54,9 +54,9 @@ class CurrencyRepository: CurrencyRepositoryProtocol {
                     after: String(codes[codes.index(codes.startIndex, offsetBy: 3)...]),
                     rate: rate
                 )
-            }
+            }.sorted(by: { $0.after < $1.after })
 
-            db.saveConversionRates(exchangeRates: rates)
+            db.saveConversionRates(conversionRates: rates)
 
             observer(.success(rates))
 

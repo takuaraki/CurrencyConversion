@@ -11,5 +11,5 @@ protocol CurrencyDBProtocol {
     func loadSupportedCurrencies() -> [Currency]?
     func saveSupportedCurrencies(currencies: [Currency])
     func loadConversionRates() -> [ConversionRate]?
-    func saveConversionRates(exchangeRates: [ConversionRate])
+    func saveConversionRates(conversionRates: [ConversionRate])
 }

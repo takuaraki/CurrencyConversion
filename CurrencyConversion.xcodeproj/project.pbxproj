@@ -33,6 +33,9 @@
 		31168AB625B4921D004D8610 /* CurrencyRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31168AB525B4921D004D8610 /* CurrencyRepositoryProtocol.swift */; };
 		31168AD425B4948A004D8610 /* SupportedCurrenciesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31168AD325B4948A004D8610 /* SupportedCurrenciesDTO.swift */; };
 		31168ADC25B49686004D8610 /* ConversionRateDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31168ADB25B49686004D8610 /* ConversionRateDTO.swift */; };
+		31168AE525B4A556004D8610 /* CurrencyRepositoryTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31168AE425B4A556004D8610 /* CurrencyRepositoryTestCase.swift */; };
+		31168AED25B4A583004D8610 /* CurrencyDBMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31168AEC25B4A583004D8610 /* CurrencyDBMock.swift */; };
+		31168AF225B4A6E6004D8610 /* CurrencyAPIMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31168AF125B4A6E6004D8610 /* CurrencyAPIMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,9 @@
 		31168AB525B4921D004D8610 /* CurrencyRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRepositoryProtocol.swift; sourceTree = "<group>"; };
 		31168AD325B4948A004D8610 /* SupportedCurrenciesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportedCurrenciesDTO.swift; sourceTree = "<group>"; };
 		31168ADB25B49686004D8610 /* ConversionRateDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionRateDTO.swift; sourceTree = "<group>"; };
+		31168AE425B4A556004D8610 /* CurrencyRepositoryTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRepositoryTestCase.swift; sourceTree = "<group>"; };
+		31168AEC25B4A583004D8610 /* CurrencyDBMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDBMock.swift; sourceTree = "<group>"; };
+		31168AF125B4A6E6004D8610 /* CurrencyAPIMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyAPIMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +156,7 @@
 		31168A3025B4868E004D8610 /* CurrencyConversionTests */ = {
 			isa = PBXGroup;
 			children = (
+				31168AE025B4A501004D8610 /* Stores */,
 				31168A3125B4868E004D8610 /* CurrencyConversionTests.swift */,
 				31168A3325B4868E004D8610 /* Info.plist */,
 			);
@@ -240,6 +247,40 @@
 				31168ADB25B49686004D8610 /* ConversionRateDTO.swift */,
 			);
 			path = DTO;
+			sourceTree = "<group>";
+		};
+		31168AE025B4A501004D8610 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				31168AE125B4A506004D8610 /* Repositories */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		31168AE125B4A506004D8610 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				31168AE425B4A556004D8610 /* CurrencyRepositoryTestCase.swift */,
+				31168AE225B4A517004D8610 /* API */,
+				31168AE325B4A51E004D8610 /* DB */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		31168AE225B4A517004D8610 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				31168AF125B4A6E6004D8610 /* CurrencyAPIMock.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		31168AE325B4A51E004D8610 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				31168AEC25B4A583004D8610 /* CurrencyDBMock.swift */,
+			);
+			path = DB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,7 +447,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31168AE525B4A556004D8610 /* CurrencyRepositoryTestCase.swift in Sources */,
+				31168AED25B4A583004D8610 /* CurrencyDBMock.swift in Sources */,
 				31168A3225B4868E004D8610 /* CurrencyConversionTests.swift in Sources */,
+				31168AF225B4A6E6004D8610 /* CurrencyAPIMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
