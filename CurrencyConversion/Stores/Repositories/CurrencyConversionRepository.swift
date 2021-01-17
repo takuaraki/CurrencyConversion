@@ -7,5 +7,5 @@
 
 import Foundation
 
-class CurrencyConversionRepository {
+class CurrencyRepository {
 }
