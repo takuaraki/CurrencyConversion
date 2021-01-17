@@ -36,6 +36,7 @@
 		31168AE525B4A556004D8610 /* CurrencyRepositoryTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31168AE425B4A556004D8610 /* CurrencyRepositoryTestCase.swift */; };
 		31168AED25B4A583004D8610 /* CurrencyDBMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31168AEC25B4A583004D8610 /* CurrencyDBMock.swift */; };
 		31168AF225B4A6E6004D8610 /* CurrencyAPIMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31168AF125B4A6E6004D8610 /* CurrencyAPIMock.swift */; };
+		31168AFA25B4C020004D8610 /* CurrencyRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31168AF925B4C020004D8610 /* CurrencyRepositoryMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		31168AE425B4A556004D8610 /* CurrencyRepositoryTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRepositoryTestCase.swift; sourceTree = "<group>"; };
 		31168AEC25B4A583004D8610 /* CurrencyDBMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDBMock.swift; sourceTree = "<group>"; };
 		31168AF125B4A6E6004D8610 /* CurrencyAPIMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyAPIMock.swift; sourceTree = "<group>"; };
+		31168AF925B4C020004D8610 /* CurrencyRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRepositoryMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +265,7 @@
 				31168AE425B4A556004D8610 /* CurrencyRepositoryTestCase.swift */,
 				31168AE225B4A517004D8610 /* API */,
 				31168AE325B4A51E004D8610 /* DB */,
+				31168AF925B4C020004D8610 /* CurrencyRepositoryMock.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 			files = (
 				31168AE525B4A556004D8610 /* CurrencyRepositoryTestCase.swift in Sources */,
 				31168AED25B4A583004D8610 /* CurrencyDBMock.swift in Sources */,
+				31168AFA25B4C020004D8610 /* CurrencyRepositoryMock.swift in Sources */,
 				31168A3225B4868E004D8610 /* CurrencyConversionTests.swift in Sources */,
 				31168AF225B4A6E6004D8610 /* CurrencyAPIMock.swift in Sources */,
 			);
