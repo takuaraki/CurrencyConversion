@@ -10,6 +10,7 @@ import RxCocoa
 
 class CurrencyConversionViewController: UIViewController {
     @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet weak var currencyPickerView: UIPickerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

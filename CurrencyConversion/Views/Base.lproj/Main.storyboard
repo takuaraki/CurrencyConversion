@@ -21,6 +21,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lcp-iG-9Ej">
+                                <rect key="frame" x="20" y="86" width="374" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="dPH-AX-7WJ"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -28,10 +34,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ROO-z8-nKK" secondAttribute="trailing" constant="20" id="8dx-pT-dhL"/>
                             <constraint firstItem="ROO-z8-nKK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VLt-hE-ZfH"/>
                             <constraint firstItem="ROO-z8-nKK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="XMC-cc-dF8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lcp-iG-9Ej" secondAttribute="trailing" constant="20" id="rH8-4N-QKd"/>
+                            <constraint firstItem="Lcp-iG-9Ej" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="sHW-IC-go8"/>
+                            <constraint firstItem="Lcp-iG-9Ej" firstAttribute="top" secondItem="ROO-z8-nKK" secondAttribute="bottom" constant="8" symbolic="YES" id="v3M-jG-3lB"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="amountTextField" destination="ROO-z8-nKK" id="1cs-Pa-kRh"/>
+                        <outlet property="currencyPickerView" destination="Lcp-iG-9Ej" id="nVE-Tc-rZI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
