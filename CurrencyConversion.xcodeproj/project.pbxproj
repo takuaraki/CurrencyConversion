@@ -24,6 +24,9 @@
 		31168A7F25B48AD0004D8610 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 31168A7E25B48AD0004D8610 /* RxSwift */; };
 		31168A8525B48BE2004D8610 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 31168A8425B48BE2004D8610 /* Realm */; };
 		31168A8725B48BE2004D8610 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 31168A8625B48BE2004D8610 /* RealmSwift */; };
+		31168A8C25B48C58004D8610 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31168A8B25B48C58004D8610 /* Currency.swift */; };
+		31168A9125B48D09004D8610 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31168A9025B48D09004D8610 /* Money.swift */; };
+		31168A9925B48FA4004D8610 /* ConversionRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31168A9825B48FA4004D8610 /* ConversionRate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		31168A6625B48934004D8610 /* CurrencyConversionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConversionRepository.swift; sourceTree = "<group>"; };
 		31168A6E25B48966004D8610 /* CurrencyConversionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConversionAPI.swift; sourceTree = "<group>"; };
 		31168A7625B48987004D8610 /* CurrencyConversionDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConversionDB.swift; sourceTree = "<group>"; };
+		31168A8B25B48C58004D8610 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		31168A9025B48D09004D8610 /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		31168A9825B48FA4004D8610 /* ConversionRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionRate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +183,9 @@
 		31168A5325B487DE004D8610 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				31168A8B25B48C58004D8610 /* Currency.swift */,
+				31168A9025B48D09004D8610 /* Money.swift */,
+				31168A9825B48FA4004D8610 /* ConversionRate.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -347,6 +356,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31168A8C25B48C58004D8610 /* Currency.swift in Sources */,
+				31168A9125B48D09004D8610 /* Money.swift in Sources */,
+				31168A9925B48FA4004D8610 /* ConversionRate.swift in Sources */,
 				31168A6725B48934004D8610 /* CurrencyConversionRepository.swift in Sources */,
 				31168A1F25B4868B004D8610 /* CurrencyConversionViewController.swift in Sources */,
 				31168A1B25B4868B004D8610 /* AppDelegate.swift in Sources */,
