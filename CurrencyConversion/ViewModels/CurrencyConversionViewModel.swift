@@ -13,7 +13,7 @@ class CurrencyConversionViewModel {
     // MARK: Inputs
     let onViewDidLoad = PublishRelay<Void>()
     let onCurrencySelected = PublishRelay<Currency>()
-    let onAmountChanged = PublishRelay<Float>()
+    let onAmountTextChanged = PublishRelay<String?>()
 
     // MARK: Outputs
     private(set) lazy var currencies: Driver<[Currency]> = store.currencies
@@ -35,8 +35,11 @@ class CurrencyConversionViewModel {
             store.selectCurrency(currency: $0)
         }).disposed(by: disposeBag)
 
-        onAmountChanged.subscribe(onNext: {
-            store.setAmount(amount: $0)
-        }).disposed(by: disposeBag)
+        onAmountTextChanged
+            .compactMap { $0 }
+            .map { text -> Float in return Float(text) ?? 0 }
+            .subscribe(onNext: {
+                store.setAmount(amount: $0)
+            }).disposed(by: disposeBag)
     }
 }
