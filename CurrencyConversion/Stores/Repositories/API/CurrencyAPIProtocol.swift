@@ -9,5 +9,5 @@ import Foundation
 
 protocol CurrencyAPIProtocol {
     func getSupportedCurrencies() -> SupportedCurrenciesDTO
-    func getUSDExchangeRates() -> ConversionRateDTO
+    func getConversionRates() -> ConversionRateDTO
 }
