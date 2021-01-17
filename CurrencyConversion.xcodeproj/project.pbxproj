@@ -100,6 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				31168A5025B4876C004D8610 /* Views */,
+				31168A5125B487B6004D8610 /* ViewModels */,
+				31168A5225B487C5004D8610 /* Stores */,
 				31168A1A25B4868B004D8610 /* AppDelegate.swift */,
 				31168A1C25B4868B004D8610 /* SceneDelegate.swift */,
 				31168A2325B4868E004D8610 /* Assets.xcassets */,
@@ -134,6 +136,52 @@
 				31168A1E25B4868B004D8610 /* CurrencyConversionViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		31168A5125B487B6004D8610 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		31168A5225B487C5004D8610 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				31168A5625B4882A004D8610 /* Repositories */,
+				31168A5325B487DE004D8610 /* Data */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		31168A5325B487DE004D8610 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		31168A5625B4882A004D8610 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				31168A5725B48846004D8610 /* API */,
+				31168A5825B4884F004D8610 /* DB */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		31168A5725B48846004D8610 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		31168A5825B4884F004D8610 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
