@@ -40,6 +40,7 @@
 		31168AFF25B4C0FB004D8610 /* CurrencyConversionStoreTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31168AFE25B4C0FB004D8610 /* CurrencyConversionStoreTestCase.swift */; };
 		3127E05225B4D1BC0012EB43 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 3127E05125B4D1BC0012EB43 /* Differentiator */; };
 		3127E05425B4D1BC0012EB43 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 3127E05325B4D1BC0012EB43 /* RxDataSources */; };
+		3127E05925B4D54E0012EB43 /* ConvertedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3127E05825B4D54E0012EB43 /* ConvertedTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		31168AF125B4A6E6004D8610 /* CurrencyAPIMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyAPIMock.swift; sourceTree = "<group>"; };
 		31168AF925B4C020004D8610 /* CurrencyRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRepositoryMock.swift; sourceTree = "<group>"; };
 		31168AFE25B4C0FB004D8610 /* CurrencyConversionStoreTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConversionStoreTestCase.swift; sourceTree = "<group>"; };
+		3127E05825B4D54E0012EB43 /* ConvertedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertedTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 			children = (
 				31168A2025B4868B004D8610 /* Main.storyboard */,
 				31168A1E25B4868B004D8610 /* CurrencyConversionViewController.swift */,
+				3127E05825B4D54E0012EB43 /* ConvertedTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3127E05925B4D54E0012EB43 /* ConvertedTableViewCell.swift in Sources */,
 				31168A8C25B48C58004D8610 /* Currency.swift in Sources */,
 				31168A9125B48D09004D8610 /* Money.swift in Sources */,
 				31168AA625B49199004D8610 /* CurrencyAPIProtocol.swift in Sources */,

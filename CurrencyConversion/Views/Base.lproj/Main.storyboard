@@ -27,20 +27,63 @@
                                     <constraint firstAttribute="height" constant="162" id="dPH-AX-7WJ"/>
                                 </constraints>
                             </pickerView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yem-K5-VLN">
+                                <rect key="frame" x="20" y="256" width="374" height="606"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ConvertedTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConvertedTableViewCell" id="Ksm-HD-tpH" customClass="ConvertedTableViewCell" customModule="CurrencyConversion" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ksm-HD-tpH" id="sD0-xq-KcW">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0j-dt-qpY">
+                                                    <rect key="frame" x="20" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nis-6O-dbo">
+                                                    <rect key="frame" x="70" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="R0j-dt-qpY" firstAttribute="leading" secondItem="sD0-xq-KcW" secondAttribute="leadingMargin" id="Zb2-Tc-FZv"/>
+                                                <constraint firstItem="R0j-dt-qpY" firstAttribute="centerY" secondItem="sD0-xq-KcW" secondAttribute="centerY" id="cdN-r2-IxP"/>
+                                                <constraint firstItem="Nis-6O-dbo" firstAttribute="leading" secondItem="R0j-dt-qpY" secondAttribute="trailing" constant="8" symbolic="YES" id="ny1-gY-RdQ"/>
+                                                <constraint firstItem="Nis-6O-dbo" firstAttribute="centerY" secondItem="sD0-xq-KcW" secondAttribute="centerY" id="zO3-7l-wKD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="amountLabel" destination="Nis-6O-dbo" id="ccA-6i-uFE"/>
+                                            <outlet property="currencyCodeLabel" destination="R0j-dt-qpY" id="BNr-Tf-Oo2"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ROO-z8-nKK" secondAttribute="trailing" constant="20" id="8dx-pT-dhL"/>
+                            <constraint firstItem="yem-K5-VLN" firstAttribute="top" secondItem="Lcp-iG-9Ej" secondAttribute="bottom" constant="8" symbolic="YES" id="Cea-go-SQP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yem-K5-VLN" secondAttribute="trailing" constant="20" id="OI3-KE-l7C"/>
                             <constraint firstItem="ROO-z8-nKK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VLt-hE-ZfH"/>
                             <constraint firstItem="ROO-z8-nKK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="XMC-cc-dF8"/>
+                            <constraint firstItem="yem-K5-VLN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="odZ-bf-HG7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lcp-iG-9Ej" secondAttribute="trailing" constant="20" id="rH8-4N-QKd"/>
+                            <constraint firstItem="yem-K5-VLN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="rX0-4I-hvL"/>
                             <constraint firstItem="Lcp-iG-9Ej" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="sHW-IC-go8"/>
                             <constraint firstItem="Lcp-iG-9Ej" firstAttribute="top" secondItem="ROO-z8-nKK" secondAttribute="bottom" constant="8" symbolic="YES" id="v3M-jG-3lB"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="amountTextField" destination="ROO-z8-nKK" id="1cs-Pa-kRh"/>
+                        <outlet property="convertedListTableView" destination="yem-K5-VLN" id="MGV-m8-gaw"/>
                         <outlet property="currencyPickerView" destination="Lcp-iG-9Ej" id="nVE-Tc-rZI"/>
                     </connections>
                 </viewController>
