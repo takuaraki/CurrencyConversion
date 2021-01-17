@@ -6,9 +6,8 @@
 //
 
 import Foundation
-import RxSwift
 
 protocol CurrencyAPIProtocol {
-    func getSupportedCurrencies() -> Single<SupportedCurrenciesDTO>
-    func getUSDExchangeRates() -> Single<[ConversionRateDTO]>
+    func getSupportedCurrencies() -> SupportedCurrenciesDTO
+    func getUSDExchangeRates() -> ConversionRateDTO
 }
