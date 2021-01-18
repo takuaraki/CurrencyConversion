@@ -8,6 +8,6 @@
 import Foundation
 
 protocol CurrencyDBProtocol {
-    func loadConversionRates() -> [ConversionRate]?
-    func saveConversionRates(conversionRates: [ConversionRate])
+    func loadConversionRates(currentDate: Date) -> [ConversionRate]?
+    func saveConversionRates(conversionRates: [ConversionRate], currentDate: Date)
 }
