@@ -28,14 +28,7 @@ class CurrencyRepository: CurrencyRepositoryProtocol {
             }
 
             api.getConversionRates(onSuccess: { dto in
-                let rates = dto.quotes.map { codes, rate -> ConversionRate in
-                    return ConversionRate(
-                        before: String(codes[..<codes.index(codes.startIndex, offsetBy: 3)]),
-                        after: String(codes[codes.index(codes.startIndex, offsetBy: 3)...]),
-                        rate: rate
-                    )
-                }.sorted(by: { $0.after < $1.after })
-
+                let rates = dto.convert().sorted(by: { $0.after < $1.after })
                 db.saveConversionRates(conversionRates: rates, currentDate: Date())
 
                 observer(.success(rates))
