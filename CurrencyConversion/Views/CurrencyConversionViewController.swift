@@ -39,7 +39,10 @@ class CurrencyConversionViewController: UIViewController {
         super.viewDidLoad()
         viewModel = CurrencyConversionViewModel(
             store: CurrencyConversionStore(
-                repository: DebugRepository()
+                repository: CurrencyRepository(
+                    api: DebugAPI(),
+                    db: CurrencyDB()
+                )
             )
         )
         viewModel.onViewDidLoad.accept(())
@@ -81,22 +84,22 @@ class CurrencyConversionViewController: UIViewController {
     }
 }
 
-class DebugRepository: CurrencyRepositoryProtocol {
-    func getConversionRates() -> Single<[ConversionRate]> {
-        return Single.just([
-            ConversionRate(before: "USD", after: "USD", rate: 1),
-            ConversionRate(before: "USD", after: "AAA", rate: 1000),
-            ConversionRate(before: "USD", after: "BBB", rate: 200),
-            ConversionRate(before: "USD", after: "CCC", rate: 50),
-            ConversionRate(before: "USD", after: "DDD", rate: 1000),
-            ConversionRate(before: "USD", after: "EEE", rate: 200),
-            ConversionRate(before: "USD", after: "FFF", rate: 50),
-            ConversionRate(before: "USD", after: "GGG", rate: 1000),
-            ConversionRate(before: "USD", after: "HHH", rate: 200),
-            ConversionRate(before: "USD", after: "III", rate: 50),
-            ConversionRate(before: "USD", after: "JJJ", rate: 1000),
-            ConversionRate(before: "USD", after: "KKK", rate: 200),
-            ConversionRate(before: "USD", after: "LLL", rate: 50),
+class DebugAPI: CurrencyAPIProtocol {
+    func getConversionRates() -> ConversionRateDTO {
+        return ConversionRateDTO(quotes: [
+            "USDUSD": 1,
+            "USDAAA": 1000,
+            "USDBBB": 200,
+            "USDCCC": 50,
+            "USDDDD": 1000,
+            "USDEEE": 200,
+            "USDFFF": 50,
+            "USDGGG": 1000,
+            "USDHHH": 200,
+            "USDIII": 50,
+            "USDJJJ": 1000,
+            "USDKKK": 200,
+            "USDLLL": 50,
         ])
     }
 }
