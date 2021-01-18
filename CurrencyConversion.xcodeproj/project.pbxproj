@@ -31,7 +31,6 @@
 		31168AA625B49199004D8610 /* CurrencyAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31168AA525B49199004D8610 /* CurrencyAPIProtocol.swift */; };
 		31168AB125B491EF004D8610 /* CurrencyConversionStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31168AB025B491EF004D8610 /* CurrencyConversionStoreProtocol.swift */; };
 		31168AB625B4921D004D8610 /* CurrencyRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31168AB525B4921D004D8610 /* CurrencyRepositoryProtocol.swift */; };
-		31168AD425B4948A004D8610 /* SupportedCurrenciesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31168AD325B4948A004D8610 /* SupportedCurrenciesDTO.swift */; };
 		31168ADC25B49686004D8610 /* ConversionRateDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31168ADB25B49686004D8610 /* ConversionRateDTO.swift */; };
 		31168AE525B4A556004D8610 /* CurrencyRepositoryTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31168AE425B4A556004D8610 /* CurrencyRepositoryTestCase.swift */; };
 		31168AED25B4A583004D8610 /* CurrencyDBMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31168AEC25B4A583004D8610 /* CurrencyDBMock.swift */; };
@@ -87,7 +86,6 @@
 		31168AA525B49199004D8610 /* CurrencyAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyAPIProtocol.swift; sourceTree = "<group>"; };
 		31168AB025B491EF004D8610 /* CurrencyConversionStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConversionStoreProtocol.swift; sourceTree = "<group>"; };
 		31168AB525B4921D004D8610 /* CurrencyRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRepositoryProtocol.swift; sourceTree = "<group>"; };
-		31168AD325B4948A004D8610 /* SupportedCurrenciesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportedCurrenciesDTO.swift; sourceTree = "<group>"; };
 		31168ADB25B49686004D8610 /* ConversionRateDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionRateDTO.swift; sourceTree = "<group>"; };
 		31168AE425B4A556004D8610 /* CurrencyRepositoryTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRepositoryTestCase.swift; sourceTree = "<group>"; };
 		31168AEC25B4A583004D8610 /* CurrencyDBMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDBMock.swift; sourceTree = "<group>"; };
@@ -254,7 +252,6 @@
 		31168AD225B49464004D8610 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
-				31168AD325B4948A004D8610 /* SupportedCurrenciesDTO.swift */,
 				31168ADB25B49686004D8610 /* ConversionRateDTO.swift */,
 			);
 			path = DTO;
@@ -448,7 +445,6 @@
 				31168ADC25B49686004D8610 /* ConversionRateDTO.swift in Sources */,
 				31168A6725B48934004D8610 /* CurrencyRepository.swift in Sources */,
 				31168A1F25B4868B004D8610 /* CurrencyConversionViewController.swift in Sources */,
-				31168AD425B4948A004D8610 /* SupportedCurrenciesDTO.swift in Sources */,
 				31168A1B25B4868B004D8610 /* AppDelegate.swift in Sources */,
 				31168AA125B4917A004D8610 /* CurrencyDBProtocol.swift in Sources */,
 				31168A6F25B48966004D8610 /* CurrencyAPI.swift in Sources */,
