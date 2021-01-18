@@ -94,6 +94,7 @@
 		31168AFE25B4C0FB004D8610 /* CurrencyConversionStoreTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConversionStoreTestCase.swift; sourceTree = "<group>"; };
 		3127E05825B4D54E0012EB43 /* ConvertedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertedTableViewCell.swift; sourceTree = "<group>"; };
 		31E27BCC25B5AFE900043450 /* CurrencyDBTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDBTestCase.swift; sourceTree = "<group>"; };
+		31E27BDA25B5BF3400043450 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +158,7 @@
 				31168A2325B4868E004D8610 /* Assets.xcassets */,
 				31168A2525B4868E004D8610 /* LaunchScreen.storyboard */,
 				31168A2825B4868E004D8610 /* Info.plist */,
+				31E27BDA25B5BF3400043450 /* README.md */,
 			);
 			path = CurrencyConversion;
 			sourceTree = "<group>";
