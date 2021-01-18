@@ -10,8 +10,8 @@ import Foundation
 
 class CurrencyAPIMock: CurrencyAPIProtocol {
     var conversionRates = ConversionRateDTO(quotes: [:])
-    
-    func getConversionRates() -> ConversionRateDTO {
-        return conversionRates
+
+    func getConversionRates(onSuccess: @escaping (ConversionRateDTO) -> Void, onError: @escaping (Error) -> Void) {
+        onSuccess(conversionRates)
     }
 }

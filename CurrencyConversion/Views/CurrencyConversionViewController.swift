@@ -85,21 +85,23 @@ class CurrencyConversionViewController: UIViewController {
 }
 
 class DebugAPI: CurrencyAPIProtocol {
-    func getConversionRates() -> ConversionRateDTO {
-        return ConversionRateDTO(quotes: [
-            "USDUSD": 1,
-            "USDAAA": 1000,
-            "USDBBB": 200,
-            "USDCCC": 50,
-            "USDDDD": 1000,
-            "USDEEE": 200,
-            "USDFFF": 50,
-            "USDGGG": 1000,
-            "USDHHH": 200,
-            "USDIII": 50,
-            "USDJJJ": 1000,
-            "USDKKK": 200,
-            "USDLLL": 50,
-        ])
+    func getConversionRates(onSuccess: @escaping (ConversionRateDTO) -> Void, onError: @escaping (Error) -> Void) {
+        onSuccess(
+            ConversionRateDTO(quotes: [
+                "USDUSD": 1,
+                "USDAAA": 1000,
+                "USDBBB": 200,
+                "USDCCC": 50,
+                "USDDDD": 1000,
+                "USDEEE": 200,
+                "USDFFF": 50,
+                "USDGGG": 1000,
+                "USDHHH": 200,
+                "USDIII": 50,
+                "USDJJJ": 1000,
+                "USDKKK": 200,
+                "USDLLL": 50,
+            ])
+        )
     }
 }

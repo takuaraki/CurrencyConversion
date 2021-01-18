@@ -8,5 +8,5 @@
 import Foundation
 
 protocol CurrencyAPIProtocol {
-    func getConversionRates() -> ConversionRateDTO
+    func getConversionRates(onSuccess: @escaping (ConversionRateDTO) -> Void, onError: @escaping (Error) -> Void)
 }
