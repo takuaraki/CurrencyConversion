@@ -9,32 +9,29 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-private let defaultCurrency = Currency(code: "USD", name: "United States Dollar")
+private let defaultCurrencyCode = "USD"
 
 class CurrencyConversionStore: CurrencyConversionStoreProtocol {
     // MARK: Outputs
-    private(set) lazy var currencies: Driver<[Currency]> = _currencies.asDriver()
-    private(set) lazy var selectedCurrency: Driver<Currency> = _selectedCurrency.asDriver()
+    private(set) lazy var currencyCodes: Driver<[CurrencyCode]> = _conversionRates.asDriver().map { $0.map { $0.after } }
+    private(set) lazy var selectedCurrencyCode: Driver<CurrencyCode> = _selectedCurrencyCode.asDriver()
     private(set) lazy var amount: Driver<Float> = _amount.asDriver()
     private(set) lazy var convertedList: Driver<[Money]> = Driver.combineLatest(
-        currencies,
-        selectedCurrency,
+        selectedCurrencyCode,
         amount,
         _conversionRates.asDriver()
-    ) { currencies, selectedCurrency, amount, conversionRates -> [Money] in
-        guard let selectedCurrencyRate = conversionRates.first(where: { $0.after == selectedCurrency.code }) else { return [] }
+    ) { selectedCurrencyCode, amount, conversionRates -> [Money] in
+        guard let selectedCurrencyRate = conversionRates.first(where: { $0.after == selectedCurrencyCode }) else { return [] }
         return conversionRates.compactMap { conversionRate -> Money? in
-            guard let afterCurrency = currencies.first(where: { $0.code == conversionRate.after }) else { return nil }
             return Money(
                 amount: amount / selectedCurrencyRate.rate * conversionRate.rate,
-                currency: afterCurrency
+                currencyCode: conversionRate.after
             )
         }
     }
 
     // MARK: Private Properties
-    private let _currencies = BehaviorRelay<[Currency]>(value: [])
-    private let _selectedCurrency = BehaviorRelay<Currency>(value: defaultCurrency)
+    private let _selectedCurrencyCode = BehaviorRelay<CurrencyCode>(value: defaultCurrencyCode)
     private let _amount = BehaviorRelay<Float>(value: 0)
     private let _conversionRates = BehaviorRelay<[ConversionRate]>(value: [])
 
@@ -49,12 +46,6 @@ class CurrencyConversionStore: CurrencyConversionStoreProtocol {
     }
 
     func load() {
-        repository.getSupportedCurrencies().subscribe(
-            onSuccess: { [_currencies] currencies in
-                _currencies.accept(currencies)
-            }
-        ).disposed(by: disposeBag)
-
         repository.getConversionRates().subscribe(
             onSuccess: { [_conversionRates] conversionRates in
                 _conversionRates.accept(conversionRates)
@@ -62,8 +53,8 @@ class CurrencyConversionStore: CurrencyConversionStoreProtocol {
         ).disposed(by: disposeBag)
     }
 
-    func selectCurrency(currency: Currency) {
-        _selectedCurrency.accept(currency)
+    func selectCurrencyCode(code: CurrencyCode) {
+        _selectedCurrencyCode.accept(code)
     }
 
     func setAmount(amount: Float) {

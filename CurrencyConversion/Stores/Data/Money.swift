@@ -9,5 +9,5 @@ import Foundation
 
 struct Money {
     let amount: Float
-    let currency: Currency
+    let currencyCode: CurrencyCode
 }

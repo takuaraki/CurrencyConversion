@@ -10,13 +10,13 @@ import RxCocoa
 
 protocol CurrencyConversionStoreProtocol {
     // MARK: Outputs
-    var currencies: Driver<[Currency]> { get }
-    var selectedCurrency: Driver<Currency> { get }
+    var currencyCodes: Driver<[CurrencyCode]> { get }
+    var selectedCurrencyCode: Driver<CurrencyCode> { get }
     var amount: Driver<Float> { get }
     var convertedList: Driver<[Money]> { get }
 
     // MARK: Inputs
     func load()
-    func selectCurrency(currency: Currency)
+    func selectCurrencyCode(code: CurrencyCode)
     func setAmount(amount: Float)
 }

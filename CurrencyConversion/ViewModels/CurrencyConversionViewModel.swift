@@ -12,11 +12,11 @@ import RxCocoa
 class CurrencyConversionViewModel {
     // MARK: Inputs
     let onViewDidLoad = PublishRelay<Void>()
-    let onCurrencySelected = PublishRelay<Currency>()
+    let onCurrencyCodeSelected = PublishRelay<CurrencyCode>()
     let onAmountTextChanged = PublishRelay<String?>()
 
     // MARK: Outputs
-    private(set) lazy var currencies: Driver<[Currency]> = store.currencies
+    private(set) lazy var currenciyCodes: Driver<[CurrencyCode]> = store.currencyCodes
     private(set) lazy var convertedList: Driver<[Money]> = store.convertedList
 
     private let store: CurrencyConversionStoreProtocol
@@ -32,8 +32,8 @@ class CurrencyConversionViewModel {
             store.load()
         }).disposed(by: disposeBag)
 
-        onCurrencySelected.subscribe(onNext: {
-            store.selectCurrency(currency: $0)
+        onCurrencyCodeSelected.subscribe(onNext: {
+            store.selectCurrencyCode(code: $0)
         }).disposed(by: disposeBag)
 
         onAmountTextChanged

@@ -25,43 +25,6 @@ class CurrencyRepositoryTestCase: XCTestCase {
         )
     }
 
-    func testGetSupportedCurrencies_withNoCache() throws {
-        api.supportedCurrencies = SupportedCurrenciesDTO(
-            currencies: [
-                "AED": "United Arab Emirates Dirham",
-                "AFN": "Afghan Afghani",
-            ]
-        )
-        db.supportedCurrencies = nil
-
-        repository.getSupportedCurrencies().subscribe(onSuccess: { currencies in
-            XCTAssertEqual(2, currencies.count)
-            XCTAssertEqual(Currency(code: "AED", name: "United Arab Emirates Dirham"), currencies[0])
-            XCTAssertEqual(Currency(code: "AFN", name: "Afghan Afghani"), currencies[1])
-        }).disposed(by: disposeBag)
-    }
-
-    func testGetSupportedCurrencies_withCache() throws {
-        api.supportedCurrencies = SupportedCurrenciesDTO(
-            currencies: [
-                "AED": "United Arab Emirates Dirham",
-                "AFN": "Afghan Afghani",
-            ]
-        )
-        db.supportedCurrencies = [
-            Currency(code: "ALL", name: "Albanian Lek"),
-            Currency(code: "AMD", name: "Armenian Dram"),
-            Currency(code: "ANG", name: "Netherlands Antillean Guilder")
-        ]
-
-        repository.getSupportedCurrencies().subscribe(onSuccess: { currencies in
-            XCTAssertEqual(3, currencies.count)
-            XCTAssertEqual(Currency(code: "ALL", name: "Albanian Lek"), currencies[0])
-            XCTAssertEqual(Currency(code: "AMD", name: "Armenian Dram"), currencies[1])
-            XCTAssertEqual(Currency(code: "ANG", name: "Netherlands Antillean Guilder"), currencies[2])
-        }).disposed(by: disposeBag)
-    }
-
     func testGetConversionRates_withNoCache() throws {
         api.conversionRates = ConversionRateDTO(quotes: [
             "USDAED": 3.673042,

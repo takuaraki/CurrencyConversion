@@ -20,26 +20,6 @@ class CurrencyRepository: CurrencyRepositoryProtocol {
         self.db = db
     }
 
-    func getSupportedCurrencies() -> Single<[Currency]> {
-        return Single<[Currency]>.create { [db, api] observer in
-            if let cache = db.loadSupportedCurrencies() {
-                observer(.success(cache))
-                return Disposables.create()
-            }
-
-            let dto = api.getSupportedCurrencies()
-            let currencies = dto.currencies.map { code, name -> Currency in
-                return Currency(code: code, name: name)
-            }.sorted(by: { $0.code < $1.code })
-
-            db.saveSupportedCurrencies(currencies: currencies)
-
-            observer(.success(currencies))
-
-            return Disposables.create()
-        }
-    }
-    
     func getConversionRates() -> Single<[ConversionRate]> {
         return Single<[ConversionRate]>.create { [db, api] observer in
             if let cache = db.loadConversionRates() {

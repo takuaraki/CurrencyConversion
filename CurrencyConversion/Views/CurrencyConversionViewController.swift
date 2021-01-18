@@ -26,7 +26,7 @@ class CurrencyConversionViewController: UIViewController {
     private lazy var convertedListDataSource: RxTableViewSectionedReloadDataSource<SectionModel<String, Money>> =
         RxTableViewSectionedReloadDataSource<SectionModel<String, Money>>(configureCell: { dataSource, tableView, indexPath, money -> UITableViewCell in
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ConvertedTableViewCell") as? ConvertedTableViewCell else { return UITableViewCell() }
-            cell.currencyCodeLabel.text = money.currency.code
+            cell.currencyCodeLabel.text = money.currencyCode
             cell.amountLabel.text = String(money.amount)
             return cell
         })
@@ -55,17 +55,16 @@ class CurrencyConversionViewController: UIViewController {
 
         Observable.combineLatest(
             currencyPickerView.rx.itemSelected.map { $0.0 },
-            viewModel.currencies.asObservable()
-        ) { selectedRow, currencies -> Currency in
-            return currencies[selectedRow]
+            viewModel.currenciyCodes.asObservable()
+        ) { selectedRow, codes -> CurrencyCode in
+            return codes[selectedRow]
         }
-        .bind(to: viewModel.onCurrencySelected)
+        .bind(to: viewModel.onCurrencyCodeSelected)
         .disposed(by: disposeBag)
     }
 
     private func handleOutputs() {
-        viewModel.currencies
-            .map { $0.map { $0.code } }
+        viewModel.currenciyCodes
             .drive(currencyPickerView.rx.items(adapter: currencyPickerAdapter))
             .disposed(by: disposeBag)
 
@@ -83,24 +82,6 @@ class CurrencyConversionViewController: UIViewController {
 }
 
 class DebugRepository: CurrencyRepositoryProtocol {
-    func getSupportedCurrencies() -> Single<[Currency]> {
-        return Single.just([
-            Currency(code: "USD", name: ""),
-            Currency(code: "AAA", name: ""),
-            Currency(code: "BBB", name: ""),
-            Currency(code: "CCC", name: ""),
-            Currency(code: "DDD", name: ""),
-            Currency(code: "EEE", name: ""),
-            Currency(code: "FFF", name: ""),
-            Currency(code: "GGG", name: ""),
-            Currency(code: "HHH", name: ""),
-            Currency(code: "III", name: ""),
-            Currency(code: "JJJ", name: ""),
-            Currency(code: "KKK", name: ""),
-            Currency(code: "LLL", name: ""),
-        ])
-    }
-    
     func getConversionRates() -> Single<[ConversionRate]> {
         return Single.just([
             ConversionRate(before: "USD", after: "USD", rate: 1),

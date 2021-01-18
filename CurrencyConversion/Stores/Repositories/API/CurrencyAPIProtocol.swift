@@ -8,6 +8,5 @@
 import Foundation
 
 protocol CurrencyAPIProtocol {
-    func getSupportedCurrencies() -> SupportedCurrenciesDTO
     func getConversionRates() -> ConversionRateDTO
 }

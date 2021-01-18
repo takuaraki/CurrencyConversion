@@ -9,6 +9,5 @@ import Foundation
 import RxSwift
 
 protocol CurrencyRepositoryProtocol {
-    func getSupportedCurrencies() -> Single<[Currency]>
     func getConversionRates() -> Single<[ConversionRate]>
 }

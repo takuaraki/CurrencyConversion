@@ -8,8 +8,3 @@
 import Foundation
 
 typealias CurrencyCode = String
-
-struct Currency: Equatable {
-    let code: CurrencyCode
-    let name: String
-}

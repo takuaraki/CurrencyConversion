@@ -9,12 +9,7 @@
 import Foundation
 
 class CurrencyAPIMock: CurrencyAPIProtocol {
-    var supportedCurrencies = SupportedCurrenciesDTO(currencies: [:])
     var conversionRates = ConversionRateDTO(quotes: [:])
-
-    func getSupportedCurrencies() -> SupportedCurrenciesDTO {
-        return supportedCurrencies
-    }
     
     func getConversionRates() -> ConversionRateDTO {
         return conversionRates
