@@ -130,6 +130,7 @@
 		31168A0E25B4868B004D8610 = {
 			isa = PBXGroup;
 			children = (
+				31E27BDA25B5BF3400043450 /* README.md */,
 				31168A1925B4868B004D8610 /* CurrencyConversion */,
 				31168A3025B4868E004D8610 /* CurrencyConversionTests */,
 				31168A3B25B4868E004D8610 /* CurrencyConversionUITests */,
@@ -158,7 +159,6 @@
 				31168A2325B4868E004D8610 /* Assets.xcassets */,
 				31168A2525B4868E004D8610 /* LaunchScreen.storyboard */,
 				31168A2825B4868E004D8610 /* Info.plist */,
-				31E27BDA25B5BF3400043450 /* README.md */,
 			);
 			path = CurrencyConversion;
 			sourceTree = "<group>";
