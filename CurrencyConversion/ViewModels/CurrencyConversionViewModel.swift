@@ -22,6 +22,7 @@ class CurrencyConversionViewModel {
     private let store: CurrencyConversionStoreProtocol
 
     private let disposeBag = DisposeBag()
+
     init(
         store: CurrencyConversionStoreProtocol
     ) {
