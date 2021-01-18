@@ -37,15 +37,10 @@ class CurrencyConversionStoreTestCase: XCTestCase {
         store.convertedList.drive(onNext: { convertedList in
             XCTAssertEqual(4, convertedList.count)
 
-            XCTAssertEqual("AAA", convertedList[0].currencyCode)
-            XCTAssertEqual("BBB", convertedList[1].currencyCode)
-            XCTAssertEqual("CCC", convertedList[2].currencyCode)
-            XCTAssertEqual("USD", convertedList[3].currencyCode)
-
-            XCTAssertEqual(500, convertedList[0].amount)
-            XCTAssertEqual(100, convertedList[1].amount)
-            XCTAssertEqual(25, convertedList[2].amount)
-            XCTAssertEqual(0.5, convertedList[3].amount)
+            XCTAssertEqual(Money(amount: 500, currencyCode: "AAA"), convertedList[0])
+            XCTAssertEqual(Money(amount: 100, currencyCode: "BBB"), convertedList[1])
+            XCTAssertEqual(Money(amount: 25, currencyCode: "CCC"), convertedList[2])
+            XCTAssertEqual(Money(amount: 0.5, currencyCode: "USD"), convertedList[3])
         }).disposed(by: disposeBag)
     }
 }
