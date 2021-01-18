@@ -40,7 +40,7 @@ class CurrencyConversionViewController: UIViewController {
         viewModel = CurrencyConversionViewModel(
             store: CurrencyConversionStore(
                 repository: CurrencyRepository(
-                    api: DebugAPI(),
+                    api: CurrencyAPI(),
                     db: CurrencyDB()
                 )
             )
