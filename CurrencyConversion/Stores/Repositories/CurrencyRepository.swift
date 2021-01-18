@@ -22,7 +22,7 @@ class CurrencyRepository: CurrencyRepositoryProtocol {
 
     func getConversionRates() -> Single<[ConversionRate]> {
         return Single<[ConversionRate]>.create { [db, api] observer in
-            if let cache = db.loadConversionRates() {
+            if let cache = db.loadConversionRates(currentDate: Date()) {
                 observer(.success(cache))
                 return Disposables.create()
             }
@@ -36,7 +36,7 @@ class CurrencyRepository: CurrencyRepositoryProtocol {
                 )
             }.sorted(by: { $0.after < $1.after })
 
-            db.saveConversionRates(conversionRates: rates)
+            db.saveConversionRates(conversionRates: rates, currentDate: Date())
 
             observer(.success(rates))
 

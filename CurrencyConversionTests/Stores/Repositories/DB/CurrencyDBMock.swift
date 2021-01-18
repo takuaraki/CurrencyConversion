@@ -11,11 +11,11 @@ import Foundation
 class CurrencyDBMock: CurrencyDBProtocol {
     var conversionRates: [ConversionRate]? = nil
 
-    func loadConversionRates() -> [ConversionRate]? {
+    func loadConversionRates(currentDate: Date = Date()) -> [ConversionRate]? {
         return conversionRates
     }
 
-    func saveConversionRates(conversionRates: [ConversionRate]) {
+    func saveConversionRates(conversionRates: [ConversionRate], currentDate: Date = Date()) {
         self.conversionRates = conversionRates
     }
 }
